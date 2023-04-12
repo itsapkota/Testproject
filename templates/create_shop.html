@@ -1,11 +1,9 @@
-<html>
-  <body>
-  <h1>Profile - {{ shop.shop_name }}</h1>
-
+{% extends 'base.html' %}
+  {% block content %}
+<h3>create shop</h3>
   <form action="{% url 'shop:create_shop' %}" method="POST">
       {{form.as_p}}
       {% csrf_token %}
       <input type="submit" value="Save">
   </form>
-  </body>
-</html>
+  {% endblock content %}
