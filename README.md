@@ -1,7 +1,7 @@
 
 ## Installation steps for local
 - clone the repo or download the zip file from github.
-- create virtual environment(window:virtualenv venv, ubuntu:python3-m venv venv).
+- create virtual environment(window:virtualenv venv, ubuntu:python3 -m venv venv).
 - activate virtualenv : source venv/bin/activate.
 - pip install -r requirements.txt.
 - python manage.py migrate
@@ -10,7 +10,7 @@
 - paste 'http://127.0.0.1:8000/admin/' in url bar of your favourite browser.
 - login with created user.
 - click on sidebar tab 'Shops' and add shops by providing shop name, latitude and longitude.
-- copy 'http://127.0.0.1:8000/' and paste it to url bar.
+- or visit 'http://127.0.0.1:8000/' on your browser and click on 'Create Shops'tabs.You can add the shop.
 - click on 'View Shops' tab in navbar.
 - enter latitude, longitude and distance in km.
 - you will get all the matched shops within the distance which you have entered.
