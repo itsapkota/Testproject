@@ -7,6 +7,6 @@ class ShopForm(forms.ModelForm):
     fields = "__all__"
 
 class ShowNearbyShop(forms.Form):
-  latitude = forms.CharField(max_length=255)
-  longitude = forms.CharField(max_length=255)
-  distance = forms.CharField(max_length=255)
+  latitude = forms.DecimalField(max_digits=9, decimal_places=6)
+  longitude = forms.DecimalField(max_digits=9, decimal_places=6)
+  distance = forms.DecimalField(max_digits=9, decimal_places=6)

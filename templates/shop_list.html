@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
   {% block content %}
   <h3> all shops</h3>
-  <ul>
+  <ul class="list-group">
       {% for shop in shops %}
-      <li>{{ shop.shop_name }}</li>
+      <li class="list-group-item">{{ shop.shop_name }}<a href="{% url 'shop:update_shop' pk=shop.pk %}" class=" btn btn-info float-end">update</a></li>
       {% endfor %}
   </ul>
   {% endblock content %}

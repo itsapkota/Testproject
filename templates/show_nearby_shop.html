@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
-  <h1>Shops inside {{distance}} km.</h1>
-  {% for shop in shop_name %}
-  <P>{{shop}}</p>
-  {% endfor %}
-  <form action="{% url 'shop:show_nearby_shop' %}" method="GET">
-      {{form.as_p}}
-      <input type="submit" value="show shops">
+  <h3>{% if distance %}Shops within {{distance}} km.{% else %}Find shops near your location{% endif %}</h3>
+  <ul class="list-group">
+    {% for shop in shop_name %}
+      <li class="list-group-item">{{shop}}</li>
+    {% endfor %}
+  </ul><hr><hr>
+  <form action="{% url 'shop:show_nearby_shop' %}">
+      {{form|crispy}}
+      <input type="submit" value="Show Shops" class="btn btn-primary w-100">
   </form>
 {% endblock content %}

@@ -1,11 +1,10 @@
-<html>
-  <body>
-  <h1>Profile - {{ shop.shop_name }}</h1>
-
-  <form action="{% url 'shop:create_shop' %}" method="POST">
-      {{form.as_p}}
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+  {% block content %}
+  <h1>update - {{ form.shop_name.value }}</h1>
+  <form action="." method="POST">
+      {{form|crispy}}
       {% csrf_token %}
-      <input type="submit" value="Save">
+      <input type="submit" value="Update" class="btn btn-primary w-100">
   </form>
-  </body>
-</html>
+{% endblock content %}
