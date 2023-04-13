@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from math import radians, sin, cos, sqrt, atan2
+from django.contrib import messages
 from .models import Shop
 from .forms import ShopForm, ShowNearbyShop
 
@@ -24,9 +25,10 @@ def update_shop(request, pk):
 		shop_form = ShopForm(request.POST, instance=shop)
 		if shop_form.is_valid():
 			shop_form.save()
+			messages.success(request, "shop updated successfully.")
 			return redirect(".")
 		else:
-			print("form invalid")
+			messages.warning(request, "Please enter a valid data.")
 	shop_form = ShopForm(instance=shop)
 	return render(request, 'update_shop.html', {'form':shop_form})
 
@@ -42,14 +44,12 @@ def show_nearby_shop(request):
 				'distance': None
 			}
 
-	if current_lat or current_lon or max_distance:
+	if not current_lat or not current_lon or not max_distance:
+		messages.warning(request, "please fill all fields")
+	else:
 		current_lat = float(current_lat)
 		current_lon = float(current_lon)
 		max_distance = float(max_distance)
-
-		# current location
-		# current_lat = 40.712776
-		# current_lon = -74.005974
 
 		# maximum distance (in meters)
 		max_distance = max_distance*1000
@@ -70,13 +70,13 @@ def show_nearby_shop(request):
 			
 			# check if the shop is within the specified distance
 			if distance <= max_distance/1000:
-				print(f"{shop.shop_name} is within {max_distance/1000} km from the current location.")
 				nearby_shops.extend([shop.shop_name])
 			
-			if nearby_shops:
-				context['shop_name'] = nearby_shops
-			if max_distance:
-				context['distance'] = max_distance/1000
+		if nearby_shops:
+			messages.success(request, f'found {len(nearby_shops)} shops.')
+			context['shop_name'] = nearby_shops
+		if max_distance:
+			context['distance'] = max_distance/1000
 	return render(request, 'show_nearby_shop.html', context)
 
 

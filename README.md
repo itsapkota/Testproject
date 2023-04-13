@@ -10,7 +10,7 @@
 - paste 'http://127.0.0.1:8000/admin/' in url bar of your favourite browser.
 - login with created user.
 - click on sidebar tab 'Shops' and add shops by providing shop name, latitude and longitude.
-- or visit 'http://127.0.0.1:8000/' on your browser and click on 'Create Shops'tabs.You can add the shop.
+- or visit 'http://127.0.0.1:8000/' on your browser and click on 'Create Shops' tabs and you can add the shop.
 - click on 'View Shops' tab in navbar.
 - enter latitude, longitude and distance in km.
 - you will get all the matched shops within the distance which you have entered.
@@ -20,13 +20,6 @@
 - visit 'https://dilip.up.railway.app/'. You can see all shops.
 - click on 'Create Shops' tab on navbar and fill the necessary details and create shops.
 - click on 'View Shops' tabs on navbar to find all shops within specified distance.
-
-
-
-
-## Note:
-- This project is mainly considered on backend part. so frontend stuff is completely. ignored.
-- backend code can be enhanced.
 
 
 ## Deployent process:
@@ -41,8 +34,18 @@
 - click  '+New' button
 - select 'GitHub Repo'
 - select a repo where the code is pushed up.
-- click on the project go to the settings tab.
+- click on the project, go to the settings tab.
 - under domain click generate domain.
 - update domain if you want to update.
 - our project is live now.
+
+
+## live at:
+https://dilip.up.railway.app/
+
+
+## Note:
+- This project is mainly considered on backend part. so frontend stuff is not kept in mind for development.
+- could make better UI and validation functionality.
+
 
