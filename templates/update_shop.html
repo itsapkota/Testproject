@@ -3,8 +3,8 @@
   {% block content %}
   <h1>update - {{ form.shop_name.value }}</h1>
   <form action="." method="POST">
-      {{form|crispy}}
       {% csrf_token %}
+      {{form|crispy}}
       <input type="submit" value="Update" class="btn btn-primary w-100">
   </form>
 {% endblock content %}

@@ -3,8 +3,8 @@
   {% block content %}
 <h3>create shop</h3>
   <form action="{% url 'shop:create_shop' %}" method="POST">
-      {{form|crispy}}
       {% csrf_token %}
+      {{form|crispy}}
       <input type="submit" value="Save" class="btn btn-primary w-100">
   </form>
   {% endblock content %}
