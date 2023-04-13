@@ -130,3 +130,4 @@ import os
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+CSRF_TRUSTED_ORIGINS = ['https://dilip.up.railway.app/']
