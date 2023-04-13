@@ -14,6 +14,7 @@
 - click on 'View Shops' tab in navbar.
 - enter latitude, longitude and distance in km.
 - you will get all the matched shops within the distance which you have entered.
+- for testing the project, in terminal type 'python manage.py test'
 
 
 ## testing in live server:

@@ -45,7 +45,7 @@ def show_nearby_shop(request):
 			}
 
 	if not current_lat or not current_lon or not max_distance:
-		messages.warning(request, "please fill all fields")
+		messages.warning(request, "please enter all details")
 	else:
 		current_lat = float(current_lat)
 		current_lon = float(current_lon)
